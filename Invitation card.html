@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitation Card</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 500px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 60px 50px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideUp 0.8s ease-out;
+  border: 2px solid #e8d4b8;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.ornament-top {
+  font-size: 28px;
+  color: #d4af37;
+  margin-bottom: 20px;
+  letter-spacing: 8px;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.title {
+  font-size: 42px;
+  color: #1e3c72;
+  font-weight: 700;
+  margin: 20px 0;
+  animation: fadeInDown 0.8s ease-out 0.4s both;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  font-weight: 300;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin: 30px auto;
+  animation: slideIn 0.8s ease-out 0.8s both;
+}
+
+.content {
+  margin: 30px 0;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.details {
+  background: rgba(212, 175, 55, 0.08);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  animation: fadeInUp 0.8s ease-out 1.2s both;
+  border-left: 4px solid #d4af37;
+}
+
+.details-item {
+  margin: 12px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.details-label {
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  border: 2px solid #1e3c72;
+  animation: fadeInUp 0.8s ease-out 1.4s both;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+  color: #1e3c72;
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.ornament-bottom {
+  font-size: 24px;
+  color: #d4af37;
+  margin-top: 30px;
+  letter-spacing: 6px;
+  animation: fadeInUp 0.8s ease-out 1.6s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+    padding: 40px 30px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <div class="ornament-top">✦ ✦ ✦</div>
+    
+    <h1 class="title">You're Invited</h1>
+    
+    <div class="subtitle">An Evening of Celebration</div>
+    
+    <div class="divider"></div>
+    
+    <div class="content">
+      <p>Join us for an unforgettable evening as we celebrate this special occasion together.</p>
+    </div>
+    
+    <div class="details">
+      <div class="details-item">
+        <span class="details-label">Date:</span> Saturday, December 14th, 2024
+      </div>
+      <div class="details-item">
+        <span class="details-label">Time:</span> 6:00 PM - 10:00 PM
+      </div>
+      <div class="details-item">
+        <span class="details-label">Location:</span> Grand Ballroom, Downtown
+      </div>
+      <div class="details-item">
+        <span class="details-label">Dress Code:</span> Formal Attire
+      </div>
+    </div>
+    
+    <button class="button">RSVP Now</button>
+    
+    <div class="ornament-bottom">✦ ✦ ✦</div>
+  </div>
+</div>
+
+</body>
+</html>

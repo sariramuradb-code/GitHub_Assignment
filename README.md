@@ -7,4 +7,4 @@ Program: BS(AI)
 
 Semester: 1st
 
-Career Goals: become an AI Engineer
+Career Goals: become an AI Engineer and aslo want to learn machine learning to train model
